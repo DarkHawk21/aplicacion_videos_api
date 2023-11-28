@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Movie;
-use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ImagenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +14,6 @@ use App\Http\Controllers\MovieController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('/movies', [MovieController::class, 'index']);
-Route::get('/movies/{id}', [MovieController::class, 'getOne']);
-
-Route::post('/movies', [MovieController::class, 'store']);
-
-Route::put('/movies/{id}', [MovieController::class, 'update']);
-
-Route::delete('movies/{id}', [MovieController::class, 'destroy']);
+Route::get('/imagenes', [ImagenController::class, 'index']);
+Route::post('/imagenes', [ImagenController::class, 'store']);
+Route::delete('imagenes/{id}', [ImagenController::class, 'destroy']);
